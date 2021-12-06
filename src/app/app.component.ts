@@ -7,10 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'test';
+  title = 'TodoList !';
 
   constructor(){
   }
   ngOninit(){
+  }
+
+  addTask(){
+    
   }
 }
