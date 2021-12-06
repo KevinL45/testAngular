@@ -2,12 +2,13 @@
 <input type='text' [(ngModel)]='title'>
 <br>
 <br>
-<button (click)="addTask(title)">Add New Task</button>
+<button (click)="addTask(title)">Ajouter une tâche</button>
 <br>
 <br>
-<ul *ngFor="let task of list">
+<ul *ngFor="let task of listTask()">
     <li>
-    {{task.task}}
-    <button (click)="deleteTask(task.id)">Remove</button>
+    <button>Supprimer une tache</button>
+    <button>Terminer une tache</button>
     </li>
 </ul>
+<button (click)="clearTask()">Enlever les tâches</button>

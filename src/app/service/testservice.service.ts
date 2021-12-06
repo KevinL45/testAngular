@@ -7,17 +7,29 @@ export class TestserviceService {
 
   constructor(){
   }
+
+
   ngOninit(){
   }
-  add(task : string){
 
-    console.log();
-    
+  clear(){
+    localStorage.clear()
   }
 
-  delete(i : number){
-
+  add(task : any){
+    localStorage.setItem("nom", JSON.stringify(task))
   }
+
+  remove(task : any){
+    localStorage.removeItem(task)
+  }
+
+  list(){
+    return localStorage.getItem('nom');
+  }
+
+
+ 
 
   
 }

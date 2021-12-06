@@ -14,14 +14,22 @@ export class AppComponent {
   constructor(private service:TestserviceService){
   }
   ngOninit(){
-  }
-  addTask(task : string){
-    this.list.push({id:this.list.length,task})
-    console.log(this.list)
+
   }
 
-  deleteTask(i : number){
-    this.list.splice(i)
-    console.log(this.list)
+  addTask(task : string){
+    this.list.push({id:this.list.length,task})
+    this.service.add(this.list)
   }
+
+  clearTask(){
+    localStorage.clear()
+  }
+
+  listTask(){
+    return this.service.list()
+  }
+
+
+ 
 }
