@@ -7,17 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit {
 
+
   constructor() { 
   }
 
   ngOnInit(): void {
   }
 
-  addData(){
-
-  }
-
-  deleteData(i: number){
+  addTask(){
 
   }
 
