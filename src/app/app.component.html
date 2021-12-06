@@ -1,5 +1,13 @@
 <h1>{{ header }}</h1>
-<input type='text' [(ngModel)]='task'>
+<input type='text' [(ngModel)]='title'>
 <br>
 <br>
-<button (click)="addTask(task)">Add New Task</button>
+<button (click)="addTask(title)">Add New Task</button>
+<br>
+<br>
+<ul *ngFor="let task of list">
+    <li>
+    {{task.task}}
+    <button (click)="deleteTask(task.id)">Remove</button>
+    </li>
+</ul>

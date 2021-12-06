@@ -1,5 +1,5 @@
+import { TestserviceService } from './service/testservice.service';
 import { Component } from '@angular/core';
-import { Task } from './interface/task';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +8,20 @@ import { Task } from './interface/task';
 })
 export class AppComponent {
   header = 'TodoList !';
-  task = ''
+  title = ''
+  list :any[]=[];
 
-  constructor(){
+  constructor(private service:TestserviceService){
   }
   ngOninit(){
   }
-
   addTask(task : string){
-    console.log(task)
+    this.list.push({id:this.list.length,task})
+    console.log(this.list)
+  }
 
+  deleteTask(i : number){
+    this.list.splice(i)
+    console.log(this.list)
   }
 }

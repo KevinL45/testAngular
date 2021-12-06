@@ -5,5 +5,19 @@ import { Injectable } from '@angular/core';
 })
 export class TestserviceService {
 
-  constructor() { }
+  constructor(){
+  }
+  ngOninit(){
+  }
+  add(task : string){
+
+    console.log();
+    
+  }
+
+  delete(i : number){
+
+  }
+
+  
 }
