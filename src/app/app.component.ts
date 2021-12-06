@@ -1,5 +1,5 @@
-import { TestserviceService } from './service/testservice.service';
 import { Component } from '@angular/core';
+import { Task } from './interface/task';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'TodoList !';
+  header = 'TodoList !';
+  task = ''
 
   constructor(){
   }
   ngOninit(){
   }
 
-  addTask(){
-    
+  addTask(task : string){
+    console.log(task)
+
   }
 }
