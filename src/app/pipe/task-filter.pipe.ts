@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Task } from '../models/task';
 
 @Pipe({
   name: 'taskFilter',
@@ -6,8 +7,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TaskFilterPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(task: Task[], status:boolean): Task[] {
+    return task.filter(t=>t.status == status);
   }
+
+
 
 }

@@ -11,18 +11,24 @@
     <h1>A faire</h1>
     <hr>
     <ul>
-      <li *ngFor="let task of tasks">
+      <li *ngFor="let task of tasks | taskFilter: false">
         <input type="checkbox" [checked]="task.status" (click)="isDone(task)"> <label>{{ task.title}}</label>
-        <button (click)="removeTask(task)">delete</button>
       </li>
     </ul>
 
-    <p>Nombre de taches restantes: {{ getCountTask() }}</p>
+    <!-- <p>Nombre de taches restantes: {{ getCountTask() }}</p> -->
+    <p>Nombre de taches restantes: {{ (tasks | taskFilter : false).length }}</p>
   </div>
 
   <div>
     <h1>Terminées</h1>
     <hr>
+    <ul id="done-items">
+      <li *ngFor="let task of tasks | taskFilter: true" >
+        {{ task.title}}
+        <button (click)="removeTask(task)">delete</button>
+      </li>
+    </ul>
   </div>
 
 </main>
