@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Task } from '../models/Task';
 
 @Injectable({
   providedIn: 'root'
@@ -16,16 +17,12 @@ export class TestserviceService {
     localStorage.clear()
   }
 
-  add(task : any){
-    localStorage.setItem("nom", JSON.stringify(task))
+  add(task : Task){
+    localStorage.setItem("task", JSON.stringify(task))
   }
 
-  remove(task : any){
-    localStorage.removeItem(task)
-  }
-
-  list(){
-    return localStorage.getItem('nom');
+  getTask(){
+    return JSON.parse(localStorage.getItem('task') ||'');
   }
 
 

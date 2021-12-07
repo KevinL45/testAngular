@@ -1,3 +1,4 @@
+import { Task } from './models/Task';
 import { TestserviceService } from './service/testservice.service';
 import { Component } from '@angular/core';
 
@@ -7,27 +8,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   header = 'TodoList !';
   title = ''
-  list :any[]=[];
+  tasks:Task[]=[];
 
   constructor(private service:TestserviceService){
   }
   ngOninit(){
-
+    this.tasks = this.service.getTask();
   }
 
-  addTask(task : string){
-    this.list.push({id:this.list.length,task})
-    this.service.add(this.list)
+  addTask(task: Task){
+    this.tasks.push(task)
+    this.service.add(task)
   }
 
   clearTask(){
     localStorage.clear()
-  }
-
-  listTask(){
-    return this.service.list()
   }
 
 
