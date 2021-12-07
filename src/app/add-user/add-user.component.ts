@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { UserService } from '../service/user.service';
 
 @Component({
@@ -9,18 +9,18 @@ import { UserService } from '../service/user.service';
 })
 export class AddUserComponent implements OnInit {
 
-  profileForm = new FormGroup({
-  pseudo: new FormControl(''),
-  email: new FormControl(''),
-  nom: new FormControl(''),
-  prenom: new FormControl('')
-  })
+  userForm  = this.fb.group({
+    pseudo: [''],
+    email: [''],
+    nom: [''],
+    prenom: [''],
+
+  });
 
 
 
 
-
-  constructor(private userService : UserService) { }
+  constructor(private userService : UserService, private fb: FormBuilder) { }
 
   ngOnInit(): void {
   }
