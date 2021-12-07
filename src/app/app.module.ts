@@ -1,22 +1,27 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TestserviceService } from './service/testservice.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { TaskService } from './service/task.service';
+import { TaskFilterPipe } from './pipe/task-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    
+    AddTaskComponent,
+    TaskFilterPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
     FormsModule
   ],
-  providers: [TestserviceService],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

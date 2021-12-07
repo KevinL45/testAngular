@@ -1,14 +1,26 @@
-<h1>{{ header }}</h1>
-<input type='text'>
-<br>
-<br>
-<button>Ajouter une tâche</button>
-<br>
-<br>
-<ul *ngFor="let task of tasks">
-    <li>
-    <button>Supprimer une tache</button>
-    <button>Terminer une tache</button>
-    </li>
-</ul>
-<button (click)="clearTask()">Enlever les tâches</button>
+<header>
+    <span>Todolist</span>
+
+    <app-add-task (newTaskEvent)="newTask($event)"></app-add-task>
+</header>
+
+<main>
+  <div>
+    <h1>A faire</h1>
+    <hr>
+    <ul>
+      <li *ngFor="let task of tasks">
+        <input type="checkbox" [checked]="task.status" (click)="isDone(task)"> <label>{{ task.title}}</label>
+        <button (click)="removeTask(task)">delete</button>
+      </li>
+    </ul>
+
+    <p>Nombre de taches restantes: {{ getCountTask() }}</p>
+  </div>
+
+  <div>
+    <h1>Terminées</h1>
+    <hr>
+  </div>
+
+</main>

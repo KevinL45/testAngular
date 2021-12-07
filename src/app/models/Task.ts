@@ -1,4 +1,4 @@
-export class Task{
-    title!:string
-    status!:boolean
+export class Task {
+    title!: string;
+    status: boolean = false;
 }
