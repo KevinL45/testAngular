@@ -18,7 +18,7 @@ export class AddUserComponent implements OnInit {
    * de la création d'un user.
    * @type {EventEmitter<any>}
    */
-   @Output() newYserEvent = new EventEmitter();
+   @Output() newUserEvent = new EventEmitter();
 
    /**
     * L'utilisateur à créer.
@@ -41,15 +41,20 @@ export class AddUserComponent implements OnInit {
 
   }
 
-  onSubmit(){
+  addUser(){
     //console.warn(this.userForm.value)
-    this.userForm.setValue({
+    /*this.userForm.setValue({
       pseudo : this.userForm.get('pseudo')?.value,
       email : this.userForm.get('email')?.value,
       nom : this.userForm.get('nom')?.value
     })
     console.log(this.userForm.value)
     this.userService.save(this.userForm.value)
+    */
+    this.newUserEvent.emit({ user: this.user });
+    this.user = new User();
+
+
 
   }
 
