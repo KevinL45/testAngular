@@ -51,10 +51,9 @@ export class AddUserComponent implements OnInit {
     console.log(this.userForm.value)
     this.newUserEvent.emit({ user: this.userForm.value });
     this.user = new User();
-
-
-
   }
+
+  
 
 
 

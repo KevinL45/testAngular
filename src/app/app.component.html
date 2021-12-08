@@ -1,22 +1,38 @@
 <header>
   <mat-toolbar>
-    <h1>Contact</h1>
   </mat-toolbar>
 </header>
 
 <main>
-  <app-add-user (newUserEvent)="newUser($event)"></app-add-user>
-</main>
-
-<main>
   <div>
-    <h1>Liste des utilisateurs</h1>
+    <h1>Contact</h1>
+    <hr>
+    <app-add-user (newUserEvent)="newUser($event)"></app-add-user>
+  </div>
+
+  <div>
+    <h1>Liste des utilisateurs, cliquer sur un des utilisatieurs</h1>
     <hr>
     <ul>
-      <li *ngFor="let user of users">
+      <li *ngFor="let user of users" (click)="detail(user)">
         {{ user.pseudo }}
       </li>
     </ul>
   </div>
+
+  <div>
+    <h1>Details</h1>
+    <hr>
+    <div *ngIf="unUser">
+        {{ unUser.pseudo }}
+    <input><button>Modifier</button>
+        <br>
+        {{ unUser.email }}
+        <br>
+        {{ unUser.nom }}
+    </div>
+    
+  </div>
+  
 </main>
 

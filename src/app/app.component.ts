@@ -10,7 +10,11 @@ import { UserService } from './service/user.service';
 export class AppComponent {
   title = 'todolist';
 
+  //Liste des utilisateurs
   users: User[] = [];
+  //Déclaration d'une variable
+  unUser?:User;
+
 
   constructor(private userService: UserService) { }
 
@@ -34,5 +38,11 @@ export class AppComponent {
 
     this.users.push(newUserEvent.user);
     this.userService.users = this.users;
+  }
+
+  detail(user :User){
+    console.log('app.components - detail()')
+    this.unUser = user;
+    
   }
 }
