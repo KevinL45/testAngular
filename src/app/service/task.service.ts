@@ -14,12 +14,4 @@ export class TaskService {
   }
 
   constructor() { }
-
-  // getTask() {
-  //   return JSON.parse(localStorage.getItem('tasks') || '');
-  // }
-
-  // saveTask(tasks: Task[]) {
-  //   localStorage.setItem('tasks', JSON.stringify(tasks));
-  // }
 }
