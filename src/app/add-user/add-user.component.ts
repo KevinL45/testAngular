@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { UserService } from '../service/user.service';
+import { Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-add-user',
@@ -10,15 +12,10 @@ import { UserService } from '../service/user.service';
 export class AddUserComponent implements OnInit {
 
   userForm  = this.fb.group({
-    pseudo: [''],
-    email: [''],
-    nom: [''],
-    prenom: [''],
-
+    pseudo: ['',Validators.required],
+    email: ['',Validators.required],
+    nom: ['',Validators.required],
   });
-
-
-
 
   constructor(private userService : UserService, private fb: FormBuilder) { }
 
