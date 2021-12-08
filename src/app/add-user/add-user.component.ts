@@ -41,14 +41,14 @@ export class AddUserComponent implements OnInit {
   }
 
   addUser(){
+    console.log('add-user-components - addUser(')
     console.warn(this.userForm.value)
     this.userForm.setValue({
       pseudo : this.userForm.get('pseudo')?.value,
       email : this.userForm.get('email')?.value,
       nom : this.userForm.get('nom')?.value
     })
-    console.log(this.userForm)
-    
+    console.log(this.userForm.value)
     this.newUserEvent.emit({ user: this.userForm.value });
     this.user = new User();
 

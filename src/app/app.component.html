@@ -7,3 +7,16 @@
 <main>
   <app-add-user (newUserEvent)="newUser($event)"></app-add-user>
 </main>
+
+<main>
+  <div>
+    <h1>Liste des utilisateurs</h1>
+    <hr>
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user.pseudo }}
+      </li>
+    </ul>
+  </div>
+</main>
+
