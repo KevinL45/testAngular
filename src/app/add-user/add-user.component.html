@@ -1,3 +1,4 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 <label for="pseudo">Pseudo : </label>
 <input id="pseudo" type="text" formControlName="pseudo">
 <br>
@@ -10,5 +11,6 @@
 <button type="submit" (click)="saveUser()">
     Ajouter
 </button>
+</form>
 
 <p>Form Status: {{ userForm.status }}</p>
