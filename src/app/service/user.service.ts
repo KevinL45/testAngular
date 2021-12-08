@@ -7,7 +7,7 @@ export class UserService {
 
   constructor() { }
 
-  save(user : any){
-    localStorage.setItem('user',JSON.stringify(user.value()))
+  save(user : any[]){
+    localStorage.setItem('user',JSON.stringify(user))
   }
 }
