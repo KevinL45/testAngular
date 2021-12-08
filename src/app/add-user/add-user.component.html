@@ -8,7 +8,7 @@
 <label for="nom">Nom : </label>
 <input id="nom" type="text" formControlName="nom">
 <br>
-<button type="submit">
+<button type="submit"  [disabled]="!userForm.valid">
     Ajouter
 </button>
 </form>

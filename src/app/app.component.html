@@ -21,11 +21,11 @@
   </div>
 
   <div>
-    <h1>Details</h1>
+    <h1>Details, modifie un pseudo et appuie sur "Entrée"</h1>
     <hr>
     <div *ngIf="unUser">
         {{ unUser.pseudo }}
-    <input (keyup)="onChangeEvent($event)"><button>Modifier</button>
+    <input (keyup.enter)="onChangeEvent($event)">
         <br>
         {{ unUser.email }}
         <br>

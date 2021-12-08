@@ -26,6 +26,7 @@ export class AppComponent {
      * @type {User[]}
      */
      this.users = this.userService.users;
+
   }
 
   /**
@@ -45,12 +46,8 @@ export class AppComponent {
     this.unUser = user;
   }
 
-  onKeyup(e : any){
-    console.log(e.target.value)
-  }
-
   onChangeEvent(event: any){
-    this.userService.users = this.update(this.userService.users, this.unUser?.pseudo, event.target.value)
+    this.userService.users = this.update(this.users, this.unUser?.pseudo, event.target.value)
   }
 
   update = (arrObj:any, oldValue:any, newValue:any)  =>
