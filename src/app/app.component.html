@@ -25,7 +25,7 @@
     <hr>
     <div *ngIf="unUser">
         {{ unUser.pseudo }}
-    <input><button>Modifier</button>
+    <input (keyup)="onChangeEvent($event)"><button>Modifier</button>
         <br>
         {{ unUser.email }}
         <br>

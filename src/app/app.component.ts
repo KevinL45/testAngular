@@ -43,6 +43,19 @@ export class AppComponent {
   detail(user :User){
     console.log('app.components - detail()')
     this.unUser = user;
-    
   }
+
+  onKeyup(e : any){
+    console.log(e.target.value)
+  }
+
+  onChangeEvent(event: any){
+    this.userService.users = this.update(this.userService.users, this.unUser?.pseudo, event.target.value)
+  }
+
+  update = (arrObj:any, oldValue:any, newValue:any)  =>
+      arrObj.map((elem:any) =>  (elem.pseudo === oldValue)
+      ? ({ ...elem, pseudo: newValue })
+      : elem
+  );
 }
