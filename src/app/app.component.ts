@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Task } from './models/task';
 import { User } from './models/user';
-import { TaskService } from './service/task.service';
 import { UserService } from './service/user.service';
 
 @Component({
@@ -20,7 +18,7 @@ export class AppComponent {
 
     /**
      * Au chargement de l'application,
-     * je récupère mes utilisateur dans le localStorage.
+     * je récupère mes utilisateurs dans le localStorage.
      * @type {User[]}
      */
      this.users = this.userService.users;
@@ -28,17 +26,13 @@ export class AppComponent {
 
   /**
    * Cette fonction se déclenche dans
-   * l'application lorsqu'une nouvelle
-   * tâche est créée par l'utilisateur
-   * dans le composant app-add-task.
+   * l'application lorsqu'un utilisateur
+   * est créer dans le composant app-add-user.
    * @param newUserEvent
    */
-  newTask(newUserEvent: any) {
-    /**
-     * On ajoute la nouvelle tâche dans le tableau de tâches. 
-     * Puis on auvegarde dans le localStorage.
-     */
-    this.users.push(newUserEvent.users);
+  newUser(newUserEvent: any) {
+
+    this.users.push(newUserEvent.user);
     this.userService.users = this.users;
   }
 }

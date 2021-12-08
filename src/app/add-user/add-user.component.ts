@@ -1,5 +1,4 @@
 import { FormBuilder } from '@angular/forms';
-import { UserService } from '../service/user.service';
 import { Validators } from '@angular/forms';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../models/user';
@@ -27,7 +26,7 @@ export class AddUserComponent implements OnInit {
    user: User = new User();
 
 
-  constructor(private userService : UserService, private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder) { 
     
   }
 
@@ -42,16 +41,15 @@ export class AddUserComponent implements OnInit {
   }
 
   addUser(){
-    //console.warn(this.userForm.value)
-    /*this.userForm.setValue({
+    console.warn(this.userForm.value)
+    this.userForm.setValue({
       pseudo : this.userForm.get('pseudo')?.value,
       email : this.userForm.get('email')?.value,
       nom : this.userForm.get('nom')?.value
     })
-    console.log(this.userForm.value)
-    this.userService.save(this.userForm.value)
-    */
-    this.newUserEvent.emit({ user: this.user });
+    console.log(this.userForm)
+    
+    this.newUserEvent.emit({ user: this.userForm.value });
     this.user = new User();
 
 
