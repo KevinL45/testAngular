@@ -10,13 +10,15 @@ import { AddTaskComponent } from './add-task/add-task.component';
 import { TaskService } from './service/task.service';
 import { TaskFilterPipe } from './pipe/task-filter.pipe';
 import { AddUserComponent } from './add-user/add-user.component';
+import { PageComponent } from './page/page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTaskComponent,
     TaskFilterPipe,
-    AddUserComponent
+    AddUserComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

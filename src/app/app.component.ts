@@ -47,6 +47,7 @@ export class AppComponent {
   }
 
   onChangeEvent(event: any){
+    console.log('app.components - onChangeEvent()')
     this.userService.users = this.update(this.users, this.unUser?.pseudo, event.target.value)
   }
 
